@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Verify from "./pages/Verify";
 import VerifyEmail from "./pages/VerifyEmail";
 import Footer from "./components/Footer";
-import Profile from "./pages/profile";
+//import Profile from "./pages/profile";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import Dashboard from "./pages/Dashboard";
@@ -25,6 +25,7 @@ import OrderSuccess from "./pages/OrderSuccess";
 import MyOrder from "./pages/MyOrder";
 import ForgotPassword from "./pages/ForgotPassword";
 import UsersList from "./pages/admin/UsersList";
+import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([
   {
