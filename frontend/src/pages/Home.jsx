@@ -1,7 +1,6 @@
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import React from "react";
-//follow
 
 const Home = () => {
   return (

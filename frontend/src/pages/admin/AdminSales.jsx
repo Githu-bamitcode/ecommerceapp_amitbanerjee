@@ -161,7 +161,7 @@ const AdminSales = () => {
               </ResponsiveContainer>
             ) : (
               <div className="h-full flex items-center justify-center text-gray-400">
-                No sales data available
+                Please wait....fetching sales data
               </div>
             )}
           </CardContent>
