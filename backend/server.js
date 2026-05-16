@@ -14,15 +14,6 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(
   cors({
-    //    origin: "http://localhost:5173",
-    origin: process.env.CLIENT_URL, // dynamic
-    credentials: true,
-  }),
-);
-
-{
-  /*
-  cors({
     origin: [
       "http://localhost:5173",
       "https://ecommerceapp-amitbanerjee-1.onrender.com",
@@ -30,8 +21,12 @@ app.use(
     credentials: true,
   }),
 );
-*/
-}
+
+//    origin: "http://localhost:5173",
+//    origin: process.env.CLIENT_URL, // dynamic
+//    credentials: true,
+//  }),
+//);
 
 // routes
 app.get("/", (req, res) => {
@@ -60,9 +55,7 @@ const startServer = async () => {
 
 startServer();
 
-{
-  /* app.listen(PORT, () => {
-  connectDB();
-  console.log(`Server is listening at port:${PORT}`);
-}); */
-}
+//* app.listen(PORT, () => {
+//connectDB();
+//console.log(`Server is listening at port:${PORT}`);
+//});

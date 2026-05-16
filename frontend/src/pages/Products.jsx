@@ -27,11 +27,10 @@ const Products = () => {
 
   const getAllProducts = async () => {
     try {
-      console.log("API:", import.meta.env.VITE_API_URL);
       setLoading(true);
       const res = await axios.get(
+        // `http://localhost:8000/api/v1/product/getallproducts`,
         `${import.meta.env.VITE_API_URL}/api/v1/product/getallproducts`,
-        //        `http://localhost:8000/api/v1/product/getallproducts`,
       );
       if (res.data.success) {
         setAllProducts(res.data.products);
@@ -121,16 +120,15 @@ const Products = () => {
           </div>
           {/* product grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
-            {Array.isArray(products) &&
-              products.map((product) => {
-                return (
-                  <ProductCard
-                    key={product._id}
-                    product={product}
-                    loading={loading}
-                  />
-                );
-              })}
+            {products.map((product) => {
+              return (
+                <ProductCard
+                  key={product._id}
+                  product={product}
+                  loading={loading}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
