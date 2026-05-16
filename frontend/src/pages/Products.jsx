@@ -120,15 +120,16 @@ const Products = () => {
           </div>
           {/* product grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
-            {products.map((product) => {
-              return (
-                <ProductCard
-                  key={product._id}
-                  product={product}
-                  loading={loading}
-                />
-              );
-            })}
+            {Array.isArray(products) &&
+              products.map((product) => {
+                return (
+                  <ProductCard
+                    key={product._id}
+                    product={product}
+                    loading={loading}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>
