@@ -172,7 +172,7 @@ const Cart = () => {
             </div>
             <div>
               <Card className="w-100">
-                <CardHeader>
+                <CardHeader className="text-center">
                   <CardTitle>Order Summary</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">

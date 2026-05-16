@@ -104,7 +104,9 @@ const AdminOrders = () => {
                 <th className="px-4 py-2 border">Order ID</th>
                 <th className="px-4 py-2 border">User</th>
                 <th className="px-4 py-2 border">Products</th>
-                <th className="px-4 py-2 border">Amount</th>
+                <th className="px-4 py-2 border">Total Amount</th>
+                <th className="px-4 py-2 border">Tax</th>
+                <th className="px-4 py-2 border">Shipping</th>
                 <th className="px-4 py-2 border">Payment</th>
                 <th className="px-4 py-2 border">Delivery Method</th>
                 <th className="px-4 py-2 border">Delivery Status</th>
@@ -131,6 +133,12 @@ const AdminOrders = () => {
                   </td>
                   <td className="px-4 py-2 border font-semibold">
                     ₹{order.amount.toLocaleString("en-IN")}
+                  </td>
+                  <td className="px-4 py-2 border font-semibold">
+                    ₹{order.tax.toLocaleString("en-IN")}
+                  </td>
+                  <td className="px-4 py-2 border font-semibold">
+                    ₹{order.shipping.toLocaleString("en-IN")}
                   </td>
                   <td className="px-4 py-2 border">
                     <span

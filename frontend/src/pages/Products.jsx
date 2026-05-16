@@ -29,15 +29,18 @@ const Products = () => {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:8000/api/v1/product/getallproducts`,
+        `${import.meta.env.VITE_API_URL}/api/v1/product/getallproducts`,
+
+        //        `http://localhost:8000/api/v1/product/getallproducts`,
       );
+      console.log(import.meta.env.VITE_API_URL);
       if (res.data.success) {
         setAllProducts(res.data.products);
         dispatch(setProducts(res.data.products));
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.mmessage);
+      toast.error(error?.response?.data?.message || "Failed to load products");
     } finally {
       setLoading(false);
     }
@@ -119,15 +122,16 @@ const Products = () => {
           </div>
           {/* product grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
-            {products.map((product) => {
-              return (
-                <ProductCard
-                  key={product._id}
-                  product={product}
-                  loading={loading}
-                />
-              );
-            })}
+            {Array.isArray(products) &&
+              products.map((product) => {
+                return (
+                  <ProductCard
+                    key={product._id}
+                    product={product}
+                    loading={loading}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>

@@ -40,12 +40,19 @@ const OrderCard = ({ userOrder }) => {
                   <h2 className="text-lg font-semibold">
                     Order ID: <span className="text-gray-600">{order._id}</span>
                   </h2>
-                  <p className="text-sm text-gray-500">
-                    Amount:{" "}
-                    <span className="font-bold">
-                      {order.currency} {order.amount.toFixed(2)}
-                    </span>
-                  </p>
+
+                  <span className="bg-blue-400 text-sm text-white px-2 py-1 rounded-lg">
+                    <label>
+                      Delivery Method : <b>{order.deliveryMethod}</b>
+                    </label>
+                    <br />
+                  </span>
+
+                  <span className="bg-blue-400 text-sm text-white px-2 py-1 rounded-lg">
+                    <label>
+                      Delivery Status : <b>{order.deliveryStatus}</b>
+                    </label>
+                  </span>
                 </div>
 
                 {/* user info */}
@@ -60,24 +67,31 @@ const OrderCard = ({ userOrder }) => {
                       Email: {order.user?.email || "N/A"}
                     </p>
                   </div>
+
                   <span
                     className={`${order.status === "Paid" ? "bg-green-500" : order.status === "Failed" ? "bg-red-500" : "bg-orange-300"} text-white px-2 py-1 rounded-lg`}
                   >
                     {order.status}
                   </span>
 
-                  <span className="bg-blue-400 text-sm text-white px-2 py-1 rounded-lg">
-                    <label>
-                      Delivery Method : <b>{order.deliveryMethod}</b>
-                    </label>
-                    <br />
-                  </span>
-
-                  <span className="bg-blue-400 text-sm text-white px-2 py-1 rounded-lg">
-                    <label>
-                      Delivery Status : <b>{order.deliveryStatus}</b>
-                    </label>
-                  </span>
+                  <p className="text-sm text-gray-500">
+                    Total:{" "}
+                    <span className="font-bold">
+                      {order.currency} {order.amount.toFixed(2)}
+                    </span>
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Tax:{" "}
+                    <span className="font-bold">
+                      {order.currency} {order.tax.toFixed(2)}
+                    </span>
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Shipping:{" "}
+                    <span className="font-bold">
+                      {order.currency} {order.shipping.toFixed(2)}
+                    </span>
+                  </p>
 
                   <p className="text-sm text-gray-500">
                     {formatDateTime(order.createdAt)}
