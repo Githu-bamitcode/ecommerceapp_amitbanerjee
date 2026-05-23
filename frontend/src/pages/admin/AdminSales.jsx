@@ -45,8 +45,8 @@ const AdminSales = () => {
   }, []);
 
   return (
-    <div className="pl-87.5 bg-gray-100 py-20 pr-20 mx-auto px-4">
-      <div className="p-6 grid gap-6 lg:grid-cols-4">
+    <div className="pl-77.5 bg-gray-100 py-4 pr-40 mx-auto px-4">
+      <div className="p-2 grid gap-6 lg:grid-cols-4">
         {/* stats card */}
         <Card className="bg-pink-500 text-white shadow">
           <CardHeader>
@@ -89,7 +89,7 @@ const AdminSales = () => {
             </CardTitle>
           </CardHeader>
 
-          <CardContent className="h-80">
+          <CardContent className="h-90">
             {stats.sales?.length ? (
               <ResponsiveContainer width="100%" height={300}>
                 <AreaChart data={stats.sales}>

@@ -12,7 +12,7 @@ const Features = () => {
             </div>
             <div>
               <h3 className="font-semibold">Free shipping</h3>
-              <p className="text-muted-foreground">On orders over $50</p>
+              <p className="text-muted-foreground">On orders over ₹299</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">

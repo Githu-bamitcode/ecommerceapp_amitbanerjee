@@ -79,7 +79,7 @@ const AdminUsers = () => {
   //  console.log(users);
 
   return (
-    <div className="pl-90 py-20 pr-20 mx-auto px-4">
+    <div className="pl-90 py-3 pr-20 mx-auto px-4">
       <h1 className="font-bold text-2xl">Customer Orders and Payments</h1>
       <p>View customer wise orders and payments status</p>
 

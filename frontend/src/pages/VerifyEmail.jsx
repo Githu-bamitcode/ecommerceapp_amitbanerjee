@@ -16,7 +16,7 @@ const VerifyEmail = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
       if (res.data.success) {
         setStatus("✅ Email Verified Successfully");

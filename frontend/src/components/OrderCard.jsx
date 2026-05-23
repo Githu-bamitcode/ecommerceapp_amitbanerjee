@@ -15,6 +15,12 @@ const OrderCard = ({ userOrder }) => {
       minute: "2-digit",
       hour12: true,
     });
+
+  // SORT ORDERS: NEWEST FIRST
+  const sortedOrders = [...(userOrder || [])].sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+  );
+
   return (
     <div className="pr-20 flex flex-col gap-3">
       <div className="w-full p-6">
@@ -24,13 +30,13 @@ const OrderCard = ({ userOrder }) => {
           </Button>
           <h1 className="text-2xl font-bold">My Orders</h1>
         </div>
-        {userOrder?.length === 0 ? (
+        {sortedOrders?.length === 0 ? (
           <p className="text-gray-800 space-y-6 text-2xl">
             No Orders found for this user
           </p>
         ) : (
           <div className="space-y-6 w-full">
-            {userOrder?.map((order) => (
+            {sortedOrders?.map((order) => (
               <div
                 key={order._id}
                 className="shadow-lg rounded-2xl p-5 border border-gray-200"

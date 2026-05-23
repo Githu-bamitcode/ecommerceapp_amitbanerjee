@@ -47,7 +47,7 @@ const FilterSidebar = ({
   };
 
   return (
-    <div className="bg-gray-100 mt-2 p-4 rounded-md h-max hidden md:block w-64">
+    <div className="bg-gray-100 mt-2 p-4 rounded-md h-max w-full w-100%">
       {/* Search */}
       <Input
         type="text"
@@ -86,12 +86,12 @@ const FilterSidebar = ({
         })}
       </select>
       {/* price range */}
-      <h1 className="mt-5 font-semibold text-xl mb-3">Price Ragne</h1>
+      <h1 className="mt-5 font-semibold text-xl mb-3">Price Range</h1>
       <div className="flex flex-col gap-2">
         <label>
           Price Range: ₹{priceRange[0]} - ₹{priceRange[1]}
         </label>
-        <div className="flex gap-2 items-center">
+        <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
           <input
             type="number"
             min="0"

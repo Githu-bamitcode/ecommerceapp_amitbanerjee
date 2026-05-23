@@ -152,7 +152,7 @@ const Profile = () => {
     }
   };
   return (
-    <div className="pt-20 min-h-screen bg-gray-100">
+    <div className="pt-4 min-h-screen bg-gray-100">
       <Tabs defaultValue="profile" className="max-w-7xl mx-auto items-center">
         <TabsList>
           <TabsTrigger value="profile">Profile</TabsTrigger>
@@ -161,7 +161,7 @@ const Profile = () => {
         <TabsContent value="profile">
           <div>
             <div className="flex flex-col justify-center items-center bg-gray-100">
-              <h1 className="font-bold mb-5 text-2xl text-gray-800">
+              <h1 className="font-bold mb-3 text-2xl text-gray-800">
                 Update Profile
               </h1>
               <div className="w-full flex gap-10 justify-between items-start px-7 max-w-2xl">
@@ -185,7 +185,7 @@ const Profile = () => {
                 {/* profile form */}
                 <form
                   onSubmit={handleSubmit}
-                  className="space-y-4 shadow-lg p-5 rounded-lg bg-white"
+                  className="space-y-3 shadow-lg p-5 rounded-lg bg-white"
                 >
                   <div className="grid grid-cols-2 gap-4">
                     <div>

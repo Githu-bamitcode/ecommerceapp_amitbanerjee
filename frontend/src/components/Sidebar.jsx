@@ -12,7 +12,7 @@ import { FaRegEdit } from "react-icons/fa";
 const Sidebar = () => {
   return (
     <div className="hidden fixed md:block border-r bg-pink-50 border-pink-200 x-10 w-70 p-10 space-y-2 h-180">
-      <div className="text-center pt-10 px-0 space-y-2">
+      <div className="text-center pt-0 px-0 space-y-2">
         <NavLink
           to="/dashboard/sales"
           className={({ isActive }) =>

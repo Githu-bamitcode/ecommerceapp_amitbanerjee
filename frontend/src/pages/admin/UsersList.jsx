@@ -119,7 +119,7 @@ const AdminUsers = () => {
   //  console.log(users);
 
   return (
-    <div className="pl-87.5 py-20 pr-20 mx-auto px-4">
+    <div className="pl-87.5 py-2 pr-20 mx-auto px-4">
       <h1 className="font-bold text-2xl">User Management</h1>
       <p>View and manage registered users</p>
 

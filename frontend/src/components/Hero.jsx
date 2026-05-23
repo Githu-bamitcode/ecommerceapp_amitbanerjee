@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mt-15 mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8">
               Latest Products at Best Prices
             </h1>
             <p className="text-xl mb-6 text-red-200">
@@ -33,7 +33,7 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          <div className="relative mt-20">
+          <div className="relative">
             <img
               src="/ecomheader.jpg"
               alt=""

@@ -154,7 +154,7 @@ const AdminProduct = () => {
     }
   };
   return (
-    <div className="pl-87.5 py-20 pr-20 flex flex-col gap-3 min-h-screen bg-gray-100">
+    <div className="pl-87.5 py-5 pr-20 flex flex-col gap-3 min-h-screen bg-gray-100">
       <div className="flex justify-between">
         <div className="relative bg-white rounded-lg">
           <Input

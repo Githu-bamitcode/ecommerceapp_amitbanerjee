@@ -91,7 +91,7 @@ const AdminOrders = () => {
     );
   }
   return (
-    <div className="pl-71 py-19 pr-20 mx-auto px-4">
+    <div className="pl-71 py-2 pr-20 mx-auto px-4">
       <h1 className="text-3xl font-bold mb-3">Update - Delivery status</h1>
 
       {orders.length === 0 ? (
