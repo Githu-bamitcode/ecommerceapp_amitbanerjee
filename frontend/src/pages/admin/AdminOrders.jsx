@@ -25,7 +25,8 @@ const AdminOrders = () => {
     const fetchOrders = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:8000/api/v1/orders/all",
+          `${import.meta.env.VITE_URL}/api/v1/orders/all`,
+          //          "http://localhost:8000/api/v1/orders/all",
           {
             headers: { Authorization: `Bearer ${accessToken}` },
           },
@@ -44,7 +45,8 @@ const AdminOrders = () => {
   const updateDeliveryStatus = async (orderId, newStatus) => {
     try {
       await axios.put(
-        `http://localhost:8000/api/v1/orders/update-status/${orderId}`,
+        `${import.meta.env.VITE_URL}/api/v1/orders/update-status/${orderId}`,
+        //        `http://localhost:8000/api/v1/orders/update-status/${orderId}`,
         { status: newStatus },
         {
           headers: { Authorization: `Bearer ${accessToken}` },
@@ -66,7 +68,8 @@ const AdminOrders = () => {
   const updateDeliveryMethod = async (orderId, method) => {
     try {
       await axios.put(
-        `http://localhost:8000/api/v1/orders/update-delivery/${orderId}`,
+        `${import.meta.env.VITE_URL}/api/v1/orders/update-delivery/${orderId}`,
+        //        `http://localhost:8000/api/v1/orders/update-delivery/${orderId}`,
         { deliveryMethod: method },
         {
           headers: { Authorization: `Bearer ${accessToken}` },
