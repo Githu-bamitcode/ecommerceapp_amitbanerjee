@@ -95,10 +95,10 @@ const AddProduct = () => {
     }
   };
   return (
-    <div className="pl-75 py-25 mx-auto px-4 bg-gray-200">
-      <Card className="w-full my-2 ">
+    <div className="min-h-screen bg-gray-100 md:ml-64 pt-14 md:pt-6 px-4 sm:px-6 lg:px-8 pb-6">
+      <Card className="w-full max-w-5xl mx-auto shadow-lg rounded-2xl">
         <CardHeader>
-          <CardTitle>Add Product</CardTitle>
+          <CardTitle className="text-2xl font-bold">Add Product</CardTitle>
           <CardDescription>Enter product details below</CardDescription>
         </CardHeader>
         <CardContent>
@@ -115,7 +115,7 @@ const AddProduct = () => {
               />
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="grid gap-2">
                 <Label>Brand</Label>
                 <Input
@@ -161,38 +161,39 @@ const AddProduct = () => {
               </div>
             </div>
             <div className="grid gap-2">
-              <div className="flex items-center">
-                <Label>Description</Label>
-              </div>
+              <Label>Description</Label>
               <Textarea
                 name="productDesc"
                 value={productData.productDesc}
                 onChange={handleChange}
                 placeholder="Enter brief description of product"
+                className="min-h-30"
               />
             </div>
-            <ImageUpload
-              productData={productData}
-              setProductData={setProductData}
-            />
+            <div>
+              <ImageUpload
+                productData={productData}
+                setProductData={setProductData}
+              />
+            </div>
+            <CardFooter className="p-0 pt-4">
+              <Button
+                disabled={loading}
+                onClick={submitHandler}
+                className="w-full bg-pink-600 cursor-pointer  text-white hover:bg-black"
+                type="submit"
+              >
+                {loading ? (
+                  <span className="flex items-center gap-2">
+                    <Loader2 className="animate-spin" />
+                    Please wait
+                  </span>
+                ) : (
+                  "Add Product"
+                )}
+              </Button>
+            </CardFooter>
           </div>
-          <CardFooter className="flex-col gap-2">
-            <Button
-              disabled={loading}
-              onClick={submitHandler}
-              className="w-full mt-4 bg-pink-600 cursor-pointer  text-white hover:bg-black"
-              type="submit"
-            >
-              {loading ? (
-                <span className="flex gap-1 items-center">
-                  <Loader2 className="animate-spin" />
-                  Please wait
-                </span>
-              ) : (
-                "Add Product"
-              )}
-            </Button>
-          </CardFooter>
         </CardContent>
       </Card>
     </div>

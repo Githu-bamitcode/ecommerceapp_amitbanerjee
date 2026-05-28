@@ -155,7 +155,10 @@ const Profile = () => {
   };
   return (
     <div className="pt-4 min-h-screen bg-gray-100">
-      <Tabs defaultValue="profile" className="max-w-7xl mx-auto items-center">
+      <Tabs
+        defaultValue="profile"
+        className="max-w-7xl mx-auto mr-9 ml-10 items-center"
+      >
         <TabsList>
           <TabsTrigger value="profile">Profile</TabsTrigger>
           <TabsTrigger value="orders">Orders</TabsTrigger>
@@ -163,10 +166,10 @@ const Profile = () => {
         <TabsContent value="profile">
           <div>
             <div className="flex flex-col justify-center items-center bg-gray-100">
-              <h1 className="font-bold mb-3 text-2xl text-gray-800">
+              <h1 className="font-bold mb-2 ml-8 text-2xl text-gray-800">
                 Update Profile
               </h1>
-              <div className="w-full flex gap-10 justify-between items-start px-7 max-w-2xl">
+              <div className="w-full flex gap-6 justify-between items-start px-7 max-w-2xl">
                 {/* profile picture */}
                 <div className="flex flex-col items-center">
                   <img

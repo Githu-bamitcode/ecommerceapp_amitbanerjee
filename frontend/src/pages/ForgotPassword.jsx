@@ -59,7 +59,7 @@ const ForgotPassword = () => {
 
       const res = await axios.post(
         `${import.meta.env.VITE_URL}/api/v1/user/verify-otp/${formData.email}`,
-//        `http://localhost:8000/api/v1/user/verify-otp/${formData.email}`,
+        //        `http://localhost:8000/api/v1/user/verify-otp/${formData.email}`,
         { otp: formData.otp },
       );
 
@@ -87,7 +87,7 @@ const ForgotPassword = () => {
 
       const res = await axios.post(
         `${import.meta.env.VITE_URL}/api/v1/user/reset-password`,
-//        "http://localhost:8000/api/v1/user/reset-password",
+        //        "http://localhost:8000/api/v1/user/reset-password",
         formData,
       );
 

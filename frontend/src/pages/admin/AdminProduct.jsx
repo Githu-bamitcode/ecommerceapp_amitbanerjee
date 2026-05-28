@@ -156,20 +156,20 @@ const AdminProduct = () => {
     }
   };
   return (
-    <div className="pl-87.5 py-5 pr-20 flex flex-col gap-3 min-h-screen bg-gray-100">
-      <div className="flex justify-between">
+    <div className="min-h-screen bg-gray-100 md:ml-64 pt-14 md:pt-6 px-4 sm:px-6 lg:px-8 pb-6 flex flex-col gap-4">
+      <div className="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
         <div className="relative bg-white rounded-lg">
           <Input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search Product..."
-            className="w-100 items-center"
+            className="w-full sm:w-87.5 pr-10"
           />
           <Search className="absolute right-3 top-1.5 text-gray-500" />
         </div>
         <Select onValueChange={(value) => setSortOrder(value)}>
-          <SelectTrigger className="w-50 bg-white border border-gray-300 shadow-sm font-semibold">
+          <SelectTrigger className="w-full sm:w-55 bg-white border border-gray-300 shadow-sm font-semibold">
             <SelectValue placeholder="Sort by Price" />
           </SelectTrigger>
           <SelectContent
@@ -194,31 +194,31 @@ const AdminProduct = () => {
       {filteredProducts.map((product, index) => {
         return (
           <Card key={index} className="px-4">
-            <div className="flex item-center justify-between">
-              <div className="flex gap-2 item-center">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex items-center gap-3 w-full sm:w-auto">
                 <img
                   src={product.productImg[0]?.url}
                   alt=""
-                  className="w-15 h-15"
+                  className="w-16 h-16 rounded-lg object-cover"
                 />
-                <h1 className="font-bold w-96 text-gray-700">
+                <h1 className="font-bold text-gray-700 text-sm sm:text-base wrap-break-word">
                   {product.productName}
                 </h1>
               </div>
-              <h1 className="font-semibold text-gray-800 mt-5">
+              <h1 className="font-semibold text-gray-800 text-base sm:text-lg">
                 ₹{product.productPrice?.toLocaleString("en-IN")}
               </h1>
-              <div className="flex gap-3">
+              <div className="flex items-center gap-4">
                 <Dialog open={open} onOpenChange={setOpen}>
                   <DialogTrigger asChild>
                     <Edit
                       onClick={() => {
                         (setOpen(true), setEditProduct({ ...product }));
                       }}
-                      className="text-green-500 cursor-pointer mt-5"
+                      className="text-green-500 cursor-pointer"
                     />
                   </DialogTrigger>
-                  <DialogContent className="bg-white opacity-100 sm:max-w-156.25 max-h-185 overflow-y-auto rounded-lg shadow-xl">
+                  <DialogContent className="bg-white w-[95vw] sm:max-w-3xl max-h-[90vh] overflow-y-auto rounded-xl shadow-xl">
                     <DialogHeader>
                       <DialogTitle>Edit Product</DialogTitle>
                       <DialogDescription>
@@ -259,7 +259,7 @@ const AdminProduct = () => {
                           required
                         />
                       </div>
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="grid gap-2">
                           <Label>Brand</Label>
                           <Input

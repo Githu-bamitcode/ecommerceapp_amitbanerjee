@@ -28,7 +28,7 @@ const ShowUserOrders = () => {
   console.log(userOrder);
 
   return (
-    <div className="pl-87.5 py-20">
+    <div className="min-h-screen bg-gray-100 md:ml-64 pt-16 px-4">
       <OrderCard userOrder={userOrder} />
     </div>
   );

@@ -93,41 +93,41 @@ const Cart = () => {
   const total = subtotal + shipping + tax;
 
   return (
-    <div className="pt-6 bg-gray-50 min-h-screen">
+    <div className="pt-6 bg-gray-50 min-h-screen px-3 sm:px-6">
       {validItems.length > 0 ? (
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-2xl font-bold text-gray-800 mb-6">
+          <h1 className="text-xl sm:text-2xl font-bold mb-6">
             🛒Shopping Cart
           </h1>
-          <div className="max-w-7xl mx-auto flex gap-7">
-            <div className="flex flex-col gap-5 flex-1">
+          <div className="flex flex-col lg:flex-row gap-6">
+            <div className="flex-1 flex flex-col gap-4">
               {validItems.map((product, index) => {
                 const price = product?.productId?.productPrice || 0;
                 const isOutOfStock = product.quantity === 0;
                 return (
-                  <Card key={index}>
-                    <div className="flex justify-between items-center pr-7">
-                      <div className="flex items-center gap-4 w-87.5">
+                  <Card key={index} className="p-3 sm:p-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div className="flex items-center gap-4 w-80">
                         <img
                           src={
                             product?.productId?.productImg?.[0]?.url || userLogo
                           }
+                          className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded"
                           alt=""
-                          className="w-25 h-25"
                         />
-                        <div className="w-70">
-                          <h1 className="font-semibold truncate">
+                        <div>
+                          <h1 className="font-semibold text-sm sm:text-base line-clamp-1">
                             {product?.productId?.productName ||
                               "Product unavailable"}
                           </h1>
-                          <p>
+                          <p className="text-sm text-gray-600">
                             {isOutOfStock
                               ? "Out of Stock"
                               : `₹${price?.toLocaleString("en-IN")}`}
                           </p>
                         </div>
                       </div>
-                      <div className="flex gap-5 items-center">
+                      <div className="flex gap-3 items-center">
                         <Button
                           onClick={() =>
                             handleUpdateQuantity(
@@ -161,7 +161,7 @@ const Cart = () => {
                       </p>
                       <p
                         onClick={() => handleRemove(product?.productId?._id)}
-                        className="flex text-red-500 items-center gap-1 cursor-pointer"
+                        className="text-red-500 flex items-center gap-1 text-sm"
                       >
                         <Trash2 className="w-4 h-4" />
                         Remove
@@ -171,8 +171,8 @@ const Cart = () => {
                 );
               })}
             </div>
-            <div>
-              <Card className="w-100">
+            <div className="w-full lg:w-87.5">
+              <Card className="sticky top-24">
                 <CardHeader className="text-center">
                   <CardTitle>Order Summary</CardTitle>
                 </CardHeader>
@@ -194,7 +194,7 @@ const Cart = () => {
                     <span>Total</span>
                     <span>₹{total.toLocaleString("en-IN")}</span>
                   </div>
-                  <div className="space-y-3 pt-4">
+                  <div className="space-y-3 pt-2">
                     <div className="flex space-x-2">
                       <Input placeholder="Promo Code" />
                       <Button variant="outline">Apply</Button>
@@ -234,7 +234,7 @@ const Cart = () => {
             Your Cart is Empty
           </h2>
           <p className="mt-2 text-gray-600">
-            Looks like you haven't added anything
+            Start adding products to your cart
           </p>
           <Button
             onClick={() => navigate("/products")}

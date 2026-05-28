@@ -80,11 +80,13 @@ const AdminUsers = () => {
   //  console.log(users);
 
   return (
-    <div className="pl-90 py-3 pr-20 mx-auto px-4">
-      <h1 className="font-bold text-2xl">Customer Orders and Payments</h1>
+    <div className="min-h-screen bg-gray-100 md:ml-64 pt-14 md:pt-6 px-4 sm:px-6 lg:px-8 pb-6">
+      <h1 className="font-bold text-xl sm:text-2xl">
+        Customer Orders and Payments
+      </h1>
       <p>View customer wise orders and payments status</p>
 
-      <div className="flex relative w-85 mt-3">
+      <div className="relative w-full sm:w-87.5 mt-4">
         <Search className="absolute left-2 top-1.75 text-gray-600 w-5" />
         <Input
           value={searchTerm}
@@ -94,7 +96,7 @@ const AdminUsers = () => {
         />
       </div>
 
-      <div className="grid grid-cols-3 gap-7 mt-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {filteredUsers.map((user) => {
           const hasValidLocation =
             user.location &&
@@ -102,33 +104,28 @@ const AdminUsers = () => {
             user.location.lng !== null;
 
           return (
-            <div key={user._id} className="bg-pink-100 p-5 rounded-lg">
-              <div className="flex items-center gap-2">
+            <div
+              key={user._id}
+              className="bg-pink-100 p-5 rounded-2xl shadow-md"
+            >
+              <div className="flex flex-col sm:flex-row items-start gap-4 text-center sm:text-left">
                 <img
                   src={user?.profilePic || UserLogo}
                   alt=""
-                  className="rounded-full w-15 aspect-square object-cover border-pink-600"
+                  className="rounded-full w-20 h-20 object-cover border-2 border-pink-600"
                 />
                 <div>
-                  <h1 className="font-semibold">
+                  <h1 className="font-semibold wrap-break-word">
                     {user?.firstName} {user?.lastName}
                   </h1>
-                  <h3>{user?.email}</h3>
+                  <h3 className="text-sm wrap-break-word">{user?.email}</h3>
                   <h3>Role : {user?.role}</h3>
                 </div>
               </div>
 
-              <div className="flex gap-3 mt-3 justify-center">
-                {/*}                <Button
-                  className="bg-pink-200 hover:bg-pink-300 cursor-pointer"
-                  onClick={() => navigate(`/dashboard/users/${user?._id}`)}
-                  variant="outline"
-                >
-                  <Edit />
-                  Edit Profile
-                </Button> */}
+              <div className="flex flex-col gap-3 mt-5 sm:flex-row sm:items-center">
                 <Button
-                  className="bg-pink-200 hover:bg-pink-300 cursor-pointer"
+                  className="w-full sm:w-auto bg-pink-200 hover:bg-pink-300 cursor-pointer"
                   onClick={() =>
                     navigate(`/dashboard/users/orders/${user?._id}`)
                   }
@@ -138,57 +135,6 @@ const AdminUsers = () => {
                   Orders & Payemnts
                 </Button>
               </div>
-
-              {/* MAP PER USER */}
-              {/*              <div className="mt-4">
-                {hasValidLocation ? (
-                  <GoogleMap
-                    center={user.location}
-                    zoom={14}
-                    mapContainerStyle={mapContainerStyle}
-                  >
-                    <Marker position={user.location} />
-                  </GoogleMap>
-                ) : (
-                  <div className="text-sm text-gray-500">
-                    <p>
-                      <u>Full address</u> :-
-                    </p>
-                    {user.fullAddress && (
-                      <p className="text-xs mt-1">{user.fullAddress}</p>
-                    )}
-                  </div>
-                )}
-              </div> */}
-
-              {/* GOOGLE MAP */}
-              {/*              {user?.address && (
-                <div className="mt-3">
-                  <h6 style={{ color: "#007bff", marginBottom: "8px" }}>
-                    <FaMapMarkerAlt /> Location Map
-                  </h6>
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "250px",
-                      borderRadius: "12px",
-                      overflow: "hidden",
-                      boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-                      border: "1px solid #ddd",
-                    }}
-                  >
-                    <iframe
-                      title={`map-${user._id}`}
-                      src={getMapUrl(user)}
-                      width="100%"
-                      height="250"
-                      style={{ border: 0 }}
-                      loading="lazy"
-                      //referrerPolicy="no-referrer-when-downgrade"
-                    />
-                  </div>
-                </div>
-              )} */}
             </div>
           );
         })}

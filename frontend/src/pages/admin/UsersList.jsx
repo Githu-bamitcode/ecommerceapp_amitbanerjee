@@ -120,12 +120,12 @@ const AdminUsers = () => {
   //  console.log(users);
 
   return (
-    <div className="pl-87.5 py-2 pr-20 mx-auto px-4">
+    <div className="min-h-screen bg-gray-100 md:ml-64 pt-14 md:pt-6 px-4 sm:px-6 lg:px-8 pb-6">
       <h1 className="font-bold text-2xl">User Management</h1>
       <p>View and manage registered users</p>
 
       {/* EXPORT BUTTONS */}
-      <div className="flex gap-3 mt-4">
+      <div className="flex flex-col sm:flex-row gap-3 mt-4">
         <Button
           onClick={exportToCSV}
           className="bg-green-200 hover:bg-green-300"
@@ -141,7 +141,7 @@ const AdminUsers = () => {
         </Button>
       </div>
 
-      <div className="flex relative w-85 mt-3">
+      <div className="relative w-full sm:w-87.5 mt-4">
         <Search className="absolute left-2 top-1.75 text-gray-600 w-5" />
         <Input
           value={searchTerm}
@@ -151,7 +151,7 @@ const AdminUsers = () => {
         />
       </div>
 
-      <div className="grid grid-cols-3 gap-7 mt-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {filteredUsers.map((user) => {
           const hasValidLocation =
             user.location &&
@@ -159,12 +159,15 @@ const AdminUsers = () => {
             user.location.lng !== null;
 
           return (
-            <div key={user._id} className="bg-pink-100 p-5 rounded-lg">
-              <div className="flex items-center gap-2">
+            <div
+              key={user._id}
+              className="bg-pink-100 p-4 sm:p-5 rounded-2xl shadow-md"
+            >
+              <div className="flex flex-col sm:flex-row items-start gap-4">
                 <img
                   src={user?.profilePic || UserLogo}
                   alt=""
-                  className="rounded-full w-15 aspect-square object-cover border-pink-600"
+                  className="rounded-full w-16 h-16 sm:w-20 sm:h-20 object-cover border-2 border-pink-600"
                 />
                 <div>
                   <h1 className="font-semibold">
@@ -175,7 +178,7 @@ const AdminUsers = () => {
                 </div>
               </div>
 
-              <div className="flex gap-3 mt-3 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 mt-4">
                 <Button
                   className="bg-pink-200 hover:bg-pink-300 cursor-pointer"
                   onClick={() => navigate(`/dashboard/users/${user?._id}`)}
@@ -254,3 +257,18 @@ const AdminUsers = () => {
 };
 
 export default AdminUsers;
+
+{
+  /*
+  {user?.address && (
+  <div className="mt-3">
+    <iframe
+      title={`map-${user._id}`}
+      src={getMapUrl(user)}
+      className="w-full h-48 rounded-xl border"
+      loading="lazy"
+    />
+  </div>
+)}
+  */
+}

@@ -91,7 +91,7 @@ const FilterSidebar = ({
         <label>
           Price Range: ₹{priceRange[0]} - ₹{priceRange[1]}
         </label>
-        <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
+        <div className="flex sm:flex-row gap-2 sm:items-center">
           <input
             type="number"
             min="0"
