@@ -22,8 +22,8 @@ const OrderCard = ({ userOrder }) => {
   );
 
   return (
-    <div className="w-full flex flex-col gap-4 px-3 sm:px-6">
-      <div className="w-full p-4 sm:p-6">
+    <div className="w-full flex flex-col gap-4 px-0 sm:px-6">
+      <div className="w-full p-0 sm:p-6">
         <div className="flex items-center gap-3 mb-6">
           <Button onClick={() => navigate(-1)}>
             <ArrowLeft />
@@ -124,7 +124,7 @@ const OrderCard = ({ userOrder }) => {
                           <span className="line-clamp-2 text-sm sm:w-1/2">
                             {product.productId?.productName}
                           </span>
-                          <span text-xs sm:text-sm text-gray-600>
+                          <span className="text-xs sm:text-sm text-gray-600">
                             <b>PID:</b> {product?.productId?._id}
                           </span>
                           <span className="text-green-600 font-bold text-sm">

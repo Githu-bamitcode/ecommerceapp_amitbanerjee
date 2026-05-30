@@ -150,18 +150,18 @@ const UserInfo = () => {
   }, [updateUser.profilePic]);
 
   return (
-    <div className="pt-5 min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 pt-6 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
-          <div className="flex justify-between gap-10">
+        <div className="flex flex-col items-center">
+          <div className="flex justify-between gap-3">
             <Button onClick={() => navigate(-1)}>
               <ArrowLeft />
             </Button>
-            <h1 className="font-bold mb-7 text-2xl text-gray-800">
+            <h1 className="font-bold mb-6 text-2xl text-gray-800">
               Update Profile
             </h1>
           </div>
-          <div className="w-full flex gap-10 justify-between items-start px-7 max-w-2xl">
+          <div className="w-full flex gap-2 justify-between items-start max-w-2xl">
             {/* profile picture */}
             <div className="flex flex-col items-center">
               <img
