@@ -16,9 +16,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://ecommerceapp-amitbanerjee.onrender.com",
       "https://ecommerceapp-amitbanerjee-1.onrender.com",
-      "https://ecommerceapp-amitbanerjee-backend.onrender.com",
     ],
     credentials: true,
   }),
