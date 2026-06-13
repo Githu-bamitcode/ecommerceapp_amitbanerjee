@@ -14,19 +14,19 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(
   cors({
-    //    origin: [
-    //      "http://localhost:5173",
-    //      "https://ecommerceapp-amitbanerjee-1.onrender.com",
-    //    ],
-    //    credentials: true,
-    //  }),
-    //);
-
-    //    origin: "http://localhost:5173",
-    origin: process.env.CLIENT_URL, // dynamic
+    origin: [
+      "http://localhost:5173",
+      "https://ecommerceapp-amitbanerjee-1.onrender.com",
+    ],
     credentials: true,
   }),
 );
+
+//    origin: "http://localhost:5173",
+//    origin: process.env.CLIENT_URL, // dynamic
+//    credentials: true,
+//  }),
+//);
 
 // routes
 app.get("/", (req, res) => {
