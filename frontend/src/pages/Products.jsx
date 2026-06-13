@@ -1,5 +1,3 @@
-//chat gpt
-
 import FilterSidebar from "@/components/FilterSidebar";
 import React, { useEffect, useState } from "react";
 import {

@@ -10,7 +10,7 @@ import {
 
 const Breadcrums = ({ product }) => {
   return (
-    <div>
+    <div className="font-bold text-cyan-600">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

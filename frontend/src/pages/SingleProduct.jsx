@@ -12,7 +12,7 @@ const SingleProduct = () => {
   const { products } = useSelector((store) => store.product);
   const product = products.find((item) => item._id === productId);
   return (
-    <div className="pt-20 py-10 max-w-7xl mx-auto">
+    <div className="pt-10 py-10 max-w-7xl mx-auto">
       <Breadcrums product={product} />
       <div className="mt-10 grid grid-cols-2 items-start">
         <ProductImg images={product.productImg} />

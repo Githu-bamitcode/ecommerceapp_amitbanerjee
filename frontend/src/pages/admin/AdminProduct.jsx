@@ -195,7 +195,7 @@ const AdminProduct = () => {
         return (
           <Card key={index} className="px-4">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div className="flex items-center gap-3 w-full sm:w-auto">
+              <div className="flex items-center gap-3 w-full sm:max-w-md">
                 <img
                   src={product.productImg[0]?.url}
                   alt=""

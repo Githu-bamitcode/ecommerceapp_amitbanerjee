@@ -102,7 +102,7 @@ const AdminSales = () => {
 
           <CardContent>
             {stats.sales?.length ? (
-              <div className="w-full h-75 sm:h-100">
+              <div className="w-full h-75 sm:h-90">
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart data={stats.sales}>
                     <CartesianGrid strokeDasharray="3 3" stroke="#eee" />

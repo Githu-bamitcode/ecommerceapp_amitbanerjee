@@ -20,9 +20,10 @@ export const verifyEmail = (token, email) => {
     text: `Hi! There you have recently visited
    our website and entered your email.
    Please follow the given link to verify your email
-   http://localhost:5173/verify/${token}
+   ${process.env.CLIENT_URL}/verify/${token}
    Thanks`,
   };
+  //    http://localhost:5173/verify/${token}
 
   transporter.sendMail(mailConfigurations, function (error, info) {
     if (error) throw Error(error);
