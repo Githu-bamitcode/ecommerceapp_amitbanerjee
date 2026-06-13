@@ -58,12 +58,10 @@ export const verifyEmail = async (token, email) => {
   }
 };
 
-
-
-
 //wrking fine as on 13.06.2026 --- rollback to below version of entire code if required
 
-{/*
+{
+  /*
 import nodemailer from "nodemailer";
 import "dotenv/config";
 
@@ -97,4 +95,5 @@ export const verifyEmail = (token, email) => {
     console.log(info);
   });
 };
-*/}
+*/
+}
