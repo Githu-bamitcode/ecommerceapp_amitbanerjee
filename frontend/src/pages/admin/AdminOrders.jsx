@@ -24,9 +24,10 @@ const AdminOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
+        const API_URL = import.meta.env.VITE_API_URL;
         const { data } = await axios.get(
-          //          `${import.meta.env.VITE_URL}/api/v1/orders/all`,
-          "http://localhost:8000/api/v1/orders/all",
+          `${API_URL}/api/v1/orders/all`,
+          //          "http://localhost:8000/api/v1/orders/all",
           {
             headers: { Authorization: `Bearer ${accessToken}` },
           },
@@ -44,9 +45,10 @@ const AdminOrders = () => {
   // NEW: Update delivery status
   const updateDeliveryStatus = async (orderId, newStatus) => {
     try {
+      const API_URL = import.meta.env.VITE_API_URL;
       await axios.put(
-        //        `${import.meta.env.VITE_URL}/api/v1/orders/update-status/${orderId}`,
-        `http://localhost:8000/api/v1/orders/update-status/${orderId}`,
+        `${API_URL}/api/v1/orders/update-status/${orderId}`,
+        //        `http://localhost:8000/api/v1/orders/update-status/${orderId}`,
         { status: newStatus },
         {
           headers: { Authorization: `Bearer ${accessToken}` },
@@ -67,9 +69,10 @@ const AdminOrders = () => {
   // NEW: Update delivery method
   const updateDeliveryMethod = async (orderId, method) => {
     try {
+      const API_URL = import.meta.env.VITE_API_URL;
       await axios.put(
-        //        `${import.meta.env.VITE_URL}/api/v1/orders/update-delivery/${orderId}`,
-        `http://localhost:8000/api/v1/orders/update-delivery/${orderId}`,
+        `${API_URL}/api/v1/orders/update-delivery/${orderId}`,
+        //        `http://localhost:8000/api/v1/orders/update-delivery/${orderId}`,
         { deliveryMethod: method },
         {
           headers: { Authorization: `Bearer ${accessToken}` },

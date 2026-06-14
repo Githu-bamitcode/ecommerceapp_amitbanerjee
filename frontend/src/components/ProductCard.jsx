@@ -36,10 +36,10 @@ const ProductCard = ({ product, loading }) => {
       if (productPrice === 0) {
         return toast.error("This product is out of stock");
       }
-
+      const API_URL = import.meta.env.VITE_API_URL;
       const res = await axios.post(
-        //        `${import.meta.env.VITE_URL}/api/v1/cart/add`,
-        "http://localhost:8000/api/v1/cart/add",
+        `${API_URL}/api/v1/cart/add`,
+        //        "http://localhost:8000/api/v1/cart/add",
         { productId: _id, quantity: 1 }, // always send quantity
         {
           headers: {

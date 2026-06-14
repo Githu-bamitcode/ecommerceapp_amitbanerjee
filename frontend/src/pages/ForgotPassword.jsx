@@ -34,10 +34,10 @@ const ForgotPassword = () => {
     e.preventDefault();
     try {
       setLoading(true);
-
+      const API_URL = import.meta.env.VITE_API_URL;
       const res = await axios.post(
-        //        `${import.meta.env.VITE_URL}/api/v1/user/forgot-password`,
-        "http://localhost:8000/api/v1/user/forgot-password",
+        `${API_URL}/api/v1/user/forgot-password`,
+        //        "http://localhost:8000/api/v1/user/forgot-password",
         { email: formData.email },
       );
 
@@ -57,9 +57,10 @@ const ForgotPassword = () => {
     try {
       setLoading(true);
 
+      const API_URL = import.meta.env.VITE_API_URL;
       const res = await axios.post(
-        //        `${import.meta.env.VITE_URL}/api/v1/user/verify-otp/${formData.email}`,
-        `http://localhost:8000/api/v1/user/verify-otp/${formData.email}`,
+        `${API_URL}/api/v1/user/verify-otp/${formData.email}`,
+        //        `http://localhost:8000/api/v1/user/verify-otp/${formData.email}`,
         { otp: formData.otp },
       );
 
@@ -84,10 +85,10 @@ const ForgotPassword = () => {
 
     try {
       setLoading(true);
-
+      const API_URL = import.meta.env.VITE_API_URL;
       const res = await axios.post(
-        //        `${import.meta.env.VITE_URL}/api/v1/user/reset-password`,
-        "http://localhost:8000/api/v1/user/reset-password",
+        `${API_URL}/api/v1/user/reset-password`,
+        //        "http://localhost:8000/api/v1/user/reset-password",
         formData,
       );
 

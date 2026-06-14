@@ -22,9 +22,10 @@ const AdminSales = () => {
 
   const fetchstats = async () => {
     try {
+      const API_URL = import.meta.env.VITE_API_URL;
       const accessToken = localStorage.getItem("accessToken");
-
-      const res = await axios.get(`http://localhost:8000/api/v1/orders/sales`, {
+      //      const res = await axios.get(`http://localhost:8000/api/v1/orders/sales`, {
+      const res = await axios.get(`${API_URL}/api/v1/orders/sales`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

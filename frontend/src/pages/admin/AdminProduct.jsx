@@ -102,9 +102,10 @@ const AdminProduct = () => {
       });
 
     try {
+      const API_URL = import.meta.env.VITE_API_URL;
       const res = await axios.put(
-        //       `${import.meta.env.VITE_URL}/api/v1/product/update/${editProduct._id}`,
-        `http://localhost:8000/api/v1/product/update/${editProduct._id}`,
+        `${API_URL}/api/v1/product/update/${editProduct._id}`,
+        //        `http://localhost:8000/api/v1/product/update/${editProduct._id}`,
         formData,
         {
           headers: {
@@ -132,9 +133,10 @@ const AdminProduct = () => {
 
   const deleteProductHandler = async (productId) => {
     try {
+      const API_URL = import.meta.env.VITE_API_URL;
       const res = await axios.delete(
-        //        `${import.meta.env.VITE_URL}/api/v1/product/delete/${productId}`,
-        `http://localhost:8000/api/v1/product/delete/${productId}`,
+        `${API_URL}/api/v1/product/delete/${productId}`,
+        //        `http://localhost:8000/api/v1/product/delete/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

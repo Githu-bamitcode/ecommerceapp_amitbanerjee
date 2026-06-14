@@ -73,9 +73,10 @@ const UserInfo = () => {
       if (file) {
         formData.append("file", file); // image file for backend multer
       }
+      const API_URL = import.meta.env.VITE_API_URL;
       const res = await axios.put(
-        //        `${import.meta.env.VITE_URL}/api/v1/user/update/${userId}`,
-        `http://localhost:8000/api/v1/user/update/${userId}`,
+        `${API_URL}/api/v1/user/update/${userId}`,
+        //        `http://localhost:8000/api/v1/user/update/${userId}`,
         formData,
         {
           headers: {
@@ -102,11 +103,11 @@ const UserInfo = () => {
 
   const getUserDetails = async () => {
     try {
+      const API_URL = import.meta.env.VITE_API_URL;
       const accessToken = localStorage.getItem("accessToken");
-
       const res = await axios.get(
-        //        `${import.meta.env.VITE_URL}/api/v1/user/get-user/${userId}`,
-        `http://localhost:8000/api/v1/user/get-user/${userId}`,
+        `${API_URL}/api/v1/user/get-user/${userId}`,
+        //        `http://localhost:8000/api/v1/user/get-user/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
