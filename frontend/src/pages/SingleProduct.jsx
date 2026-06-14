@@ -1,7 +1,6 @@
 import Breadcrums from "@/components/Breadcrums";
 import ProductDesc from "@/components/ProductDesc";
 import ProductImg from "@/components/ProductImg";
-//import ProductImg from "@/components/Productimg";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";

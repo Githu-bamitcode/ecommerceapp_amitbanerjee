@@ -71,8 +71,8 @@ const Profile = () => {
       setPasswordLoading(true);
 
       const res = await axios.post(
-        `${import.meta.env.VITE_URL}/api/v1/user/change-password`,
-        //        "http://localhost:8000/api/v1/user/change-password",
+        //        `${import.meta.env.VITE_URL}/api/v1/user/change-password`,
+        "http://localhost:8000/api/v1/user/change-password",
         passwordData,
         {
           headers: {
@@ -132,8 +132,8 @@ const Profile = () => {
         formData.append("file", file); // image file for backend multer
       }
       const res = await axios.put(
-        `${import.meta.env.VITE_URL}/api/v1/user/update/${userId}`,
-        //        `http://localhost:8000/api/v1/user/update/${userId}`,
+        //        `${import.meta.env.VITE_URL}/api/v1/user/update/${userId}`,
+        `http://localhost:8000/api/v1/user/update/${userId}`,
         formData,
         {
           headers: {

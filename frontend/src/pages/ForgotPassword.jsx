@@ -36,8 +36,8 @@ const ForgotPassword = () => {
       setLoading(true);
 
       const res = await axios.post(
-        `${import.meta.env.VITE_URL}/api/v1/user/forgot-password`,
-        //        "http://localhost:8000/api/v1/user/forgot-password",
+        //        `${import.meta.env.VITE_URL}/api/v1/user/forgot-password`,
+        "http://localhost:8000/api/v1/user/forgot-password",
         { email: formData.email },
       );
 
@@ -58,8 +58,8 @@ const ForgotPassword = () => {
       setLoading(true);
 
       const res = await axios.post(
-        `${import.meta.env.VITE_URL}/api/v1/user/verify-otp/${formData.email}`,
-        //        `http://localhost:8000/api/v1/user/verify-otp/${formData.email}`,
+        //        `${import.meta.env.VITE_URL}/api/v1/user/verify-otp/${formData.email}`,
+        `http://localhost:8000/api/v1/user/verify-otp/${formData.email}`,
         { otp: formData.otp },
       );
 
@@ -86,8 +86,8 @@ const ForgotPassword = () => {
       setLoading(true);
 
       const res = await axios.post(
-        `${import.meta.env.VITE_URL}/api/v1/user/reset-password`,
-        //        "http://localhost:8000/api/v1/user/reset-password",
+        //        `${import.meta.env.VITE_URL}/api/v1/user/reset-password`,
+        "http://localhost:8000/api/v1/user/reset-password",
         formData,
       );
 
