@@ -326,7 +326,12 @@ export const forgotPassword = async (req, res) => {
     user.otpExpiry = otpExpiry;
 
     await user.save();
-    await sendOTPMail(otp, email);
+
+    // NON-BLOCKING EMAIL SEND (IMPORTANT FIX)
+    sendOTPMail(otp, email).catch((err) => {
+      console.error("OTP email failed:", err);
+    });
+    //    await sendOTPMail(otp, email);
 
     return res.status(200).json({
       success: true,
