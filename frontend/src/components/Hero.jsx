@@ -6,14 +6,14 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-linear-to-r from-blue-600 to-purple-600 text-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+    <section className="bg-linear-to-r from-blue-600 to-purple-600 text-white py-12 md:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Latest Products at Best Prices
             </h1>
-            <p className="text-xl mb-6 text-red-200">
+            <p className="text-base sm:text-lg md:text-xl mb-6 text-red-200">
               Discover cutting-edge technology with unbeatable deals on
               Smartphones, Laptops and more...
             </p>
@@ -33,13 +33,13 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative order-1 md:order-2">
             <img
               src="/ecomheader.jpg"
-              alt=""
-              width={1500}
-              height={400}
-              className="rounded-lg shadow-2xl"
+              alt="E-commerce Banner"
+              //              width={1500}
+              //              height={400}
+              className="w-full h-auto rounded-xl shadow-2xl object-cover"
             />
           </div>
         </div>

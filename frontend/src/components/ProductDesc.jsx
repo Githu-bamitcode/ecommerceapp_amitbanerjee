@@ -87,7 +87,7 @@ const ProductDesc = ({ product }) => {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="font-bold text-4xl text-gray-800">
+      <h1 className="font-bold text-3xl text-gray-800">
         {product?.productName}
       </h1>
       <p className="text-gray-800">

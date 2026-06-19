@@ -51,12 +51,16 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/">
-              <img src="/shop_online.jpg" alt="logo" className="w-16 md:w-20" />
+              <img
+                src="/shop_online.jpg"
+                alt="logo"
+                className="w-12 sm:w-14 md:w-16 lg:w-20 h-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-6">
-              <ul className="flex items-center gap-6 text-base font-semibold">
+            <nav className="hidden md:flex items-center gap-4 lg:gap-6">
+              <ul className="flex items-center gap-4 lg:gap-6 text-sm lg:text-base font-semibold">
                 <Link to="/">
                   <li className="hover:text-pink-600 transition">Home</li>
                 </Link>
@@ -68,7 +72,7 @@ const Navbar = () => {
                 {user && (
                   <Link to={`/profile/${user._id}`}>
                     <li className="hover:text-pink-600 transition">
-                      Hello, {user.firstName}
+                      Hello, {user.firstName?.slice(0, 12)}
                     </li>
                   </Link>
                 )}
@@ -94,7 +98,11 @@ const Navbar = () => {
               {/* Auth Button */}
               {user ? (
                 <Button
-                  onClick={logoutHandler}
+                  onClick={() => {
+                    logoutHandler();
+                    setMobileMenu(false);
+                  }}
+                  //                  onClick={logoutHandler}
                   className="bg-pink-600 text-white hover:bg-black"
                 >
                   Logout
@@ -102,7 +110,7 @@ const Navbar = () => {
               ) : (
                 <Button
                   onClick={() => navigate("/login")}
-                  className="bg-gradient-to-tr from-blue-600 to-purple-600 text-white"
+                  className="bg-linear-to-tr from-blue-600 to-purple-600 text-white"
                 >
                   Login
                 </Button>
@@ -123,8 +131,13 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenu && (
+        {/* Mobile Menu 
+        {mobileMenu && (*/}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            mobileMenu ? "max-h-screen" : "max-h-0"
+          }`}
+        >
           <div className="md:hidden bg-white border-t border-pink-100 shadow-lg">
             <div className="flex flex-col px-6 py-5 gap-5 text-lg font-medium">
               <Link to="/" onClick={() => setMobileMenu(false)}>
@@ -177,18 +190,19 @@ const Navbar = () => {
                     navigate("/login");
                     setMobileMenu(false);
                   }}
-                  className="bg-gradient-to-tr from-blue-600 to-purple-600 text-white w-full"
+                  className="bg-linear-to-tr from-blue-600 to-purple-600 text-white w-full"
                 >
                   Login
                 </Button>
               )}
             </div>
           </div>
-        )}
+          {/*}        )}   */}
+        </div>
       </header>
 
       {/* Prevent content hiding behind fixed navbar */}
-      <div className="h-16"></div>
+      <div className="pt-16 md:pt-20"></div>
     </>
   );
 };
